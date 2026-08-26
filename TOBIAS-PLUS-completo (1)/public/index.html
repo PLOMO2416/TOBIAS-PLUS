@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TOBIAS.PLUS</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#"><span class="dot"></span>TOBIAS<span>.PLUS</span></a>
+  <nav>
+    <button data-view="home">Inicio</button>
+    <button data-view="plans">Planes</button>
+    <button data-view="loans">Créditos</button>
+    <button id="dashboardBtn" data-view="dashboard">Mi cuenta</button>
+    <button id="logoutBtn" class="hidden">Salir</button>
+  </nav>
+</header>
+
+<main>
+<section id="home" class="view active hero">
+  <div>
+    <p class="eyebrow">PLATAFORMA DIGITAL</p>
+    <h1>Todo tu mundo financiero, <span>en un solo lugar.</span></h1>
+    <p class="lead">Gestiona tus planes, solicita créditos y consulta tus movimientos desde TOBIAS.PLUS.</p>
+    <div class="actions">
+      <button class="primary" data-view="plans">Ver planes</button>
+      <button class="ghost" data-view="login">Iniciar sesión</button>
+    </div>
+  </div>
+  <div class="hero-card">
+    <div class="card-glow"></div>
+    <small>TOBIAS.PLUS</small>
+    <strong>Tu plataforma</strong>
+    <span>Pagos verificados · Créditos · Planes</span>
+  </div>
+</section>
+
+<section id="login" class="view auth">
+  <div class="auth-card">
+    <p class="eyebrow">ACCESO</p>
+    <h2>Bienvenido</h2>
+    <form id="loginForm">
+      <input name="email" type="email" placeholder="Correo electrónico" required>
+      <input name="password" type="password" placeholder="Contraseña" required>
+      <button class="primary" type="submit">Entrar</button>
+    </form>
+    <p id="loginMsg" class="msg"></p>
+    <button class="link" data-view="register">Crear una cuenta</button>
+  </div>
+</section>
+
+<section id="register" class="view auth">
+  <div class="auth-card">
+    <p class="eyebrow">REGISTRO</p>
+    <h2>Crea tu cuenta</h2>
+    <form id="registerForm">
+      <input name="fullName" placeholder="Nombre completo" required>
+      <input name="email" type="email" placeholder="Correo electrónico" required>
+      <input name="password" type="password" placeholder="Contraseña (mínimo 8)" minlength="8" required>
+      <button class="primary" type="submit">Registrarme</button>
+    </form>
+    <p id="registerMsg" class="msg"></p>
+  </div>
+</section>
+
+<section id="plans" class="view">
+  <div class="section-head"><div><p class="eyebrow">PLANES</p><h2>Elige tu plan</h2></div></div>
+  <div id="plansGrid" class="grid"></div>
+</section>
+
+<section id="loans" class="view">
+  <div class="section-head"><div><p class="eyebrow">CRÉDITOS</p><h2>Solicita un crédito</h2></div></div>
+  <div class="loan-box">
+    <p>Indica el monto que deseas solicitar. La solicitud quedará pendiente hasta su revisión.</p>
+    <form id="loanForm"><input name="amountCop" type="number" min="1" step="1000" placeholder="Monto en COP" required><button class="primary">Solicitar</button></form>
+    <p id="loanMsg" class="msg"></p>
+  </div>
+</section>
+
+<section id="dashboard" class="view">
+  <div class="section-head"><div><p class="eyebrow">MI CUENTA</p><h2 id="welcome">Dashboard</h2></div></div>
+  <div id="dashboardContent"></div>
+</section>
+</main>
+
+<div id="toast" class="toast"></div>
+<script src="/app.js"></script>
+</body>
+</html>
